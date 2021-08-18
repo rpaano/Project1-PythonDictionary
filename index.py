@@ -22,4 +22,9 @@ def definition(word):
 
 word = input("Enter word: ")
 
-print(definition(word))
+defined = definition(word)
+
+if type(defined) == list:
+    print(*definition(word), sep="\n")
+else:
+    print(defined)
