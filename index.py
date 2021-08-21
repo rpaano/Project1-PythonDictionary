@@ -8,7 +8,7 @@ def definition(w):
     w.lower()
     if w in data:
         return data[w]
-    elif len(close := get_close_matches(w, data.keys())) > 0:
+    elif close := get_close_matches(w, data.keys()):
         yn = input(
             "Did you mean %s? Please enter 'Y' for yes and 'N' for no: " % get_close_matches(w, data.keys())[0]).upper()
         return data[close[0]] if yn == "Y" else (
